@@ -9,7 +9,7 @@ import UIKit
 
 class VideoCell: UITableViewCell {
     
-    let videoImageView = CustomImageView()
+    let videoImageView = UIImageView()
     let videoTitleLbl = UILabel()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -28,7 +28,13 @@ class VideoCell: UITableViewCell {
     
     func set(meme: Meme){
         videoTitleLbl.text = meme.name
-        self.videoImageView.loadImgFromUrl(urlString: meme.url)
+        ImageDownloadManager.shared.loadImgFromUrl(urlString: meme.url) { data in
+            if let safeData = data {
+                DispatchQueue.main.async {
+                    self.videoImageView.image = UIImage(data: safeData)
+                }
+            }
+        }
         
     }
    
