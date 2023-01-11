@@ -41,7 +41,6 @@ class VideoCell: UITableViewCell {
     func configureImageView(){
         videoImageView.layer.cornerRadius = 10
         videoImageView.clipsToBounds = true
-        
     }
     
     func configureTitleLbl(){

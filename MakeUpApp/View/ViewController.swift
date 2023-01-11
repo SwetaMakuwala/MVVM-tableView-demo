@@ -31,7 +31,7 @@ class ViewController: UIViewController {
                 }
             } errorCompletion: { error in
                 DispatchQueue.main.async {
-                    self.showAlert(vc: self, title: error ?? "")
+                    self.showAlert(title: error ?? "")
                 }
             }
         //}
@@ -66,13 +66,13 @@ class ViewController: UIViewController {
     
 }
 extension ViewController {
-     func showAlert(vc: UIViewController, title: String){
+     func showAlert(title: String){
         let alert = UIAlertController(title: title, message: "", preferredStyle: .alert)
         let action = UIAlertAction(title: Constants.OkAlertTitle, style: .cancel) { action in
-            vc.navigationController?.popViewController(animated: true)
+            self.navigationController?.popViewController(animated: true)
         }
         alert.addAction(action)
-        vc.present(alert, animated: true, completion: nil)
+         self.present(alert, animated: true, completion: nil)
     }
 }
 

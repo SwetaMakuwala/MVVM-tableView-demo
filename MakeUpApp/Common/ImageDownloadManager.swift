@@ -10,6 +10,7 @@ import UIKit
 
 class ImageDownloadManager
 {
+    // (completionHandler: ( (_ data: Data) -> Void )? = nil)
    static var shared = ImageDownloadManager()
      func loadImgFromUrl(urlString: String, completionHandler: @escaping (_ data : Data?) -> Void){
 
