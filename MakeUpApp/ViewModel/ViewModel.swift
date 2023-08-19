@@ -26,3 +26,4 @@ struct ViewModel
 
     }
 }
+// func getApiData<T:Decodable>(requestUrl: URL, resultType: T.Type, completionHandler:@escaping(_ result: T?)-> Void, errorCompletion : @escaping(_ error: String?)-> Void)

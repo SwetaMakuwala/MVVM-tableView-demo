@@ -12,7 +12,7 @@ class ActivityIndicatorClass{
     static let shared = ActivityIndicatorClass()
     var indicator = UIActivityIndicatorView()
     
-    func presentActivityIndicator(vc : ViewController) {
+    func presentActivityIndicator(vc : UIViewController) {
         indicator = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
         indicator.style = UIActivityIndicatorView.Style.large
         indicator.center = vc.view.center
@@ -22,7 +22,7 @@ class ActivityIndicatorClass{
         vc.view.addSubview(indicator)
     }
     
-    func removeActivityIndicator(vc : ViewController){
+    func removeActivityIndicator(vc : UIViewController){
         indicator.stopAnimating()
         indicator.hidesWhenStopped = true 
         indicator.removeFromSuperview()
